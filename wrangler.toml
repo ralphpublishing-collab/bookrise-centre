@@ -1,0 +1,8 @@
+name = "bookrise-centre-live"
+main = "worker/worker.js"
+compatibility_date = "2026-11-22"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "bookrise-centre"
+database_id = "9d354c7e-6ed1-436e-b1fe-3d1eb5ed39cf"
