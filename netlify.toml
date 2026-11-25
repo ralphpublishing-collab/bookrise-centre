@@ -1,0 +1,15 @@
+# BookRise Centre is a Cloudflare Worker (worker/worker.js) with no framework,
+# no package manager and no compile step. On Netlify, every request is handled
+# by netlify/functions/site.mjs, which calls the Worker's fetch handler.
+
+[build]
+  # No build step. This only makes sure the (intentionally empty) publish
+  # directory exists, so repository files such as docs/ and wrangler.toml
+  # are never published as static assets.
+  command = "mkdir -p public"
+  publish = "public"
+
+[functions]
+  # Bundle the function together with ../../worker/worker.js (an ES module
+  # that sits outside the functions directory).
+  node_bundler = "esbuild"
